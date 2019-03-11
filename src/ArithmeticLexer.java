@@ -1,4 +1,4 @@
-package gen;// Generated from C:/Users/ptrck/Github/antlr-arithmetic-calculator/src\Calculator.g4 by ANTLR 4.7.2
+// Generated from C:/Users/ptrck/Github/antlr-arithmetic-calculator/src\Arithmetic.g4 by ANTLR 4.7.2
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;
@@ -9,7 +9,7 @@ import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.misc.*;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
-public class CalculatorLexer extends Lexer {
+public class ArithmeticLexer extends Lexer {
 	static { RuntimeMetaData.checkVersion("4.7.2", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
@@ -81,13 +81,13 @@ public class CalculatorLexer extends Lexer {
 	}
 
 
-	public CalculatorLexer(CharStream input) {
+	public ArithmeticLexer(CharStream input) {
 		super(input);
 		_interp = new LexerATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
 
 	@Override
-	public String getGrammarFileName() { return "Calculator.g4"; }
+	public String getGrammarFileName() { return "Arithmetic.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }

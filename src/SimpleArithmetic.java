@@ -1,37 +1,34 @@
-import gen.CalculatorBaseVisitor;
-import gen.CalculatorParser;
-
-public class SimpleArithmetic extends CalculatorBaseVisitor<Integer> {
+public class SimpleArithmetic extends ArithmeticBaseVisitor<Integer> {
 
     @Override
-    public Integer visitEvaluate(CalculatorParser.EvaluateContext ctx) {
+    public Integer visitEvaluate(ArithmeticParser.EvaluateContext ctx) {
         Integer result = visit(ctx.level1());
         if (result != null) System.out.println(result);
         return result;
     }
 
     @Override
-    public Integer visitAddition(CalculatorParser.AdditionContext ctx) {
+    public Integer visitAddition(ArithmeticParser.AdditionContext ctx) {
         return visit(ctx.level1()) + visit(ctx.level2());
     }
 
     @Override
-    public Integer visitSubtraction(CalculatorParser.SubtractionContext ctx) {
+    public Integer visitSubtraction(ArithmeticParser.SubtractionContext ctx) {
         return visit(ctx.level1()) - visit(ctx.level2());
     }
 
     @Override
-    public Integer visitMultiplication(CalculatorParser.MultiplicationContext ctx) {
+    public Integer visitMultiplication(ArithmeticParser.MultiplicationContext ctx) {
         return visit(ctx.level2()) * visit(ctx.negate());
     }
 
     @Override
-    public Integer visitModulo(CalculatorParser.ModuloContext ctx) {
+    public Integer visitModulo(ArithmeticParser.ModuloContext ctx) {
         return visit(ctx.level2()) % visit(ctx.negate());
     }
 
     @Override
-    public Integer visitDivision(CalculatorParser.DivisionContext ctx) {
+    public Integer visitDivision(ArithmeticParser.DivisionContext ctx) {
         Integer dividend = visit(ctx.level2());
         Integer divisor = visit(ctx.negate());
 
@@ -44,17 +41,17 @@ public class SimpleArithmetic extends CalculatorBaseVisitor<Integer> {
     }
 
     @Override
-    public Integer visitNegateSign(CalculatorParser.NegateSignContext ctx) {
+    public Integer visitNegateSign(ArithmeticParser.NegateSignContext ctx) {
         return visit(ctx.negate()) * -1;
     }
 
     @Override
-    public Integer visitNumber(CalculatorParser.NumberContext ctx) {
+    public Integer visitNumber(ArithmeticParser.NumberContext ctx) {
         return Integer.parseInt(ctx.NUMBER().getText());
     }
 
     @Override
-    public Integer visitParenthesize(CalculatorParser.ParenthesizeContext ctx) {
+    public Integer visitParenthesize(ArithmeticParser.ParenthesizeContext ctx) {
         return visit(ctx.level1());
     }
 }
