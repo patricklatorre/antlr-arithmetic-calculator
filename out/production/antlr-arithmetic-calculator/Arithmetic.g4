@@ -1,4 +1,4 @@
-grammar Calculator;
+grammar Arithmetic;
 NUMBER : [0-9]+;
 NEWLINE     : '\n';
 WHITESPACE     : [ \t\r]+ -> skip;

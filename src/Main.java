@@ -1,3 +1,7 @@
+import generated.ArithmeticLexer;
+import generated.ArithmeticParser;
+import implementation.ArithmeticEvaluator;
+import implementation.OneLineErrorListener;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
@@ -36,7 +40,7 @@ public class Main {
 
                 // evaluate
                 ParseTree tree = parser.expression();
-                SimpleArithmetic calcVisitor = new SimpleArithmetic();
+                ArithmeticEvaluator calcVisitor = new ArithmeticEvaluator();
                 calcVisitor.visit(tree);
 
                 // for safety

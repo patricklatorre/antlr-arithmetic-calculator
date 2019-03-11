@@ -1,4 +1,9 @@
-public class SimpleArithmetic extends ArithmeticBaseVisitor<Integer> {
+package implementation;
+
+import generated.ArithmeticBaseVisitor;
+import generated.ArithmeticParser;
+
+public class ArithmeticEvaluator extends ArithmeticBaseVisitor<Integer> {
 
     @Override
     public Integer visitEvaluate(ArithmeticParser.EvaluateContext ctx) {
